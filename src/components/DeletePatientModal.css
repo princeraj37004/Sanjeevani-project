@@ -1,0 +1,75 @@
+.delete-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(5px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.delete-modal{
+    width:430px;
+    background:#111827;
+    border:1px solid #374151;
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+    color:white;
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+}
+
+.delete-icon{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#7f1d1d;
+    color:#ef4444;
+}
+
+.delete-modal h2{
+    margin:20px 0 10px;
+}
+
+.delete-modal p{
+    color:#9ca3af;
+    line-height:1.6;
+}
+
+.delete-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+}
+
+.cancel-btn{
+    padding:12px 22px;
+    border:none;
+    border-radius:10px;
+    background:#374151;
+    color:white;
+    cursor:pointer;
+}
+
+.delete-btn{
+    padding:12px 22px;
+    border:none;
+    border-radius:10px;
+    background:#dc2626;
+    color:white;
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+    background:#b91c1c;
+}
+
+.cancel-btn:hover{
+    background:#4b5563;
+}

@@ -1,0 +1,352 @@
+/* ===========================
+   Patients Page
+=========================== */
+
+.patients-page{
+    padding:30px;
+    background:#0f172a;
+    min-height:100vh;
+    color:#fff;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.page-header h1{
+    margin:0;
+    font-size:30px;
+    font-weight:700;
+}
+
+.page-header p{
+    margin-top:6px;
+    color:#94a3b8;
+}
+
+/* ===========================
+   Add Button
+=========================== */
+
+.add-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 22px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:#fff;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.add-btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   Stats
+=========================== */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.stat-card{
+    background:#1e293b;
+    border:1px solid #334155;
+    border-radius:18px;
+    padding:22px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.stat-card svg{
+    color:#3b82f6;
+}
+
+.stat-card h2{
+    margin:0;
+    font-size:28px;
+}
+
+.stat-card span{
+    color:#94a3b8;
+}
+
+.stat-card.success svg{
+    color:#22c55e;
+}
+
+.stat-card.warning svg{
+    color:#f59e0b;
+}
+
+.stat-card.danger svg{
+    color:#ef4444;
+}
+
+/* ===========================
+   Toolbar
+=========================== */
+
+.toolbar{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.search-box{
+    flex:1;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#1e293b;
+    border:1px solid #334155;
+    border-radius:12px;
+    padding:12px 16px;
+}
+
+.search-box input{
+    flex:1;
+    background:none;
+    border:none;
+    outline:none;
+    color:#fff;
+    font-size:15px;
+}
+
+.search-box input::placeholder{
+    color:#94a3b8;
+}
+
+.toolbar select{
+    width:220px;
+    background:#1e293b;
+    border:1px solid #334155;
+    color:#fff;
+    border-radius:12px;
+    padding:12px;
+    outline:none;
+}
+/* ===========================
+   Table
+=========================== */
+
+.table-card{
+    background:#1e293b;
+    border:1px solid #334155;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#111827;
+}
+
+thead th{
+    padding:18px;
+    text-align:left;
+    color:#cbd5e1;
+    font-weight:600;
+    font-size:14px;
+}
+
+tbody td{
+    padding:18px;
+    border-top:1px solid #334155;
+}
+
+tbody tr{
+    transition:.25s;
+}
+
+tbody tr:hover{
+    background:#273449;
+}
+
+/* ===========================
+   Patient Info
+=========================== */
+
+.patient-info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+}
+
+.patient-info strong{
+    display:block;
+    font-size:15px;
+}
+
+.patient-info small{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    color:#94a3b8;
+    margin-top:4px;
+}
+
+.village{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#cbd5e1;
+}
+
+/* ===========================
+   Status Badge
+=========================== */
+
+.status{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.status.active{
+    background:#1e3a8a;
+    color:#93c5fd;
+}
+
+.status.recovered{
+    background:#14532d;
+    color:#86efac;
+}
+
+.status.critical{
+    background:#7f1d1d;
+    color:#fca5a5;
+}
+
+/* ===========================
+   Action Buttons
+=========================== */
+
+.action-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.action-buttons button{
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.view-btn{
+    background:#2563eb;
+    color:#fff;
+}
+
+.view-btn:hover{
+    background:#1d4ed8;
+}
+
+.edit-btn{
+    background:#f59e0b;
+    color:#fff;
+}
+
+.edit-btn:hover{
+    background:#d97706;
+}
+
+.delete-btn{
+    background:#dc2626;
+    color:#fff;
+}
+
+.delete-btn:hover{
+    background:#b91c1c;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:900px){
+
+    .page-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .toolbar{
+        flex-direction:column;
+    }
+
+    .toolbar select{
+        width:100%;
+    }
+
+    .table-card{
+        overflow-x:auto;
+    }
+
+    table{
+        min-width:900px;
+    }
+}
+
+@media(max-width:600px){
+
+    .patients-page{
+        padding:15px;
+    }
+
+    .page-header h1{
+        font-size:24px;
+    }
+
+    .stat-card{
+        padding:18px;
+    }
+}

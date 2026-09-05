@@ -1,0 +1,68 @@
+[
+  {
+    "_id": "dml85vkmrqic47c",
+    "name": "Rampur",
+    "district": "Patna",
+    "population": 1200,
+    "healthWorker": "Prince Kumar",
+    "lat": 25.5941,
+    "lng": 85.1376,
+    "createdAt": "2026-07-18T15:14:12.168Z",
+    "updatedAt": "2026-07-22T05:55:07.150Z"
+  },
+  {
+    "_id": "6ai35mvmrqic47f",
+    "name": "Karanpur",
+    "district": "Patna",
+    "population": 850,
+    "healthWorker": "Rajesh Kumar",
+    "lat": 25.612,
+    "lng": 85.152,
+    "createdAt": "2026-07-18T15:14:12.171Z",
+    "updatedAt": "2026-07-18T15:14:12.171Z"
+  },
+  {
+    "_id": "8d6pqofmrqic47i",
+    "name": "Gopalpur",
+    "district": "Patna",
+    "population": 1500,
+    "healthWorker": "Meena Kumari",
+    "lat": 25.578,
+    "lng": 85.105,
+    "createdAt": "2026-07-18T15:14:12.174Z",
+    "updatedAt": "2026-07-18T15:14:12.174Z"
+  },
+  {
+    "_id": "xtoyytjmrqic47l",
+    "name": "Sonpur",
+    "district": "Saran",
+    "population": 2200,
+    "healthWorker": "Unassigned",
+    "lat": 25.6985,
+    "lng": 85.1725,
+    "createdAt": "2026-07-18T15:14:12.177Z",
+    "updatedAt": "2026-07-18T15:14:12.177Z"
+  },
+  {
+    "_id": "rwrwx7imrqic47n",
+    "name": "Bihta",
+    "district": "Patna",
+    "population": 3100,
+    "healthWorker": "Unassigned",
+    "lat": 25.5606,
+    "lng": 84.8732,
+    "createdAt": "2026-07-18T15:14:12.179Z",
+    "updatedAt": "2026-07-18T15:14:12.179Z"
+  },
+  {
+    "_id": "tfw8aftmrvx7dzs",
+    "name": "sonpur",
+    "district": "Patna",
+    "population": 1500,
+    "healthWorker": "Unassigned",
+    "lat": 25.65,
+    "lng": 85.1468,
+    "createdAt": "2026-07-22T10:09:16.696Z",
+    "updatedAt": "2026-07-22T10:09:16.696Z"
+  }
+]

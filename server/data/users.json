@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "2yj3l2zmrnmeglz",
+    "name": "Dr. Aarav Sharma",
+    "email": "supervisor@health.gov.in",
+    "password": "$2a$10$LEKZJ0ZiMXeUCwXVT5RjdefUON/wfYVbZ3m4PloAeeW4bchg0hlOW",
+    "role": "supervisor",
+    "village": "All Districts",
+    "createdAt": "2026-07-16T14:44:41.495Z",
+    "updatedAt": "2026-07-16T14:44:41.496Z"
+  },
+  {
+    "_id": "xrrg544mrnmegm3",
+    "name": "Sunita Devi",
+    "email": "worker1@health.gov.in",
+    "password": "$2a$10$LEKZJ0ZiMXeUCwXVT5RjdefUON/wfYVbZ3m4PloAeeW4bchg0hlOW",
+    "role": "worker",
+    "village": "Rampur",
+    "createdAt": "2026-07-16T14:44:41.499Z",
+    "updatedAt": "2026-07-16T14:44:41.499Z"
+  },
+  {
+    "_id": "nvt1xxymrnmegm8",
+    "name": "Rajesh Kumar",
+    "email": "worker2@health.gov.in",
+    "password": "$2a$10$LEKZJ0ZiMXeUCwXVT5RjdefUON/wfYVbZ3m4PloAeeW4bchg0hlOW",
+    "role": "worker",
+    "village": "Karanpur",
+    "createdAt": "2026-07-16T14:44:41.504Z",
+    "updatedAt": "2026-07-16T14:44:41.504Z"
+  },
+  {
+    "_id": "0teqbe5mrnmegma",
+    "name": "Meena Kumari",
+    "email": "worker3@health.gov.in",
+    "password": "$2a$10$LEKZJ0ZiMXeUCwXVT5RjdefUON/wfYVbZ3m4PloAeeW4bchg0hlOW",
+    "role": "worker",
+    "village": "Gopalpur",
+    "createdAt": "2026-07-16T14:44:41.506Z",
+    "updatedAt": "2026-07-16T14:44:41.506Z"
+  },
+  {
+    "_id": "xaie792mrnmh0kr",
+    "name": "Test Health Worker",
+    "email": "worker_1784213200599@health.gov.in",
+    "password": "$2a$10$Ck9W1Q0Un4frlDd4HzhhQ..u5n918r59atESxwcpmm9aTwGq.Tzsq",
+    "role": "worker",
+    "village": "Rampur",
+    "createdAt": "2026-07-16T14:46:40.683Z",
+    "updatedAt": "2026-07-16T14:46:40.683Z"
+  },
+  {
+    "_id": "on3zfytmrnmh0nb",
+    "name": "Test Medical Supervisor",
+    "email": "supervisor_1784213200690@health.gov.in",
+    "password": "$2a$10$O1fQ0TqQ7A.HBy2rLSOrg.vUwGYV5fHSfcHMylQJj1vihi7.laloO",
+    "role": "supervisor",
+    "village": "All Districts",
+    "createdAt": "2026-07-16T14:46:40.775Z",
+    "updatedAt": "2026-07-16T14:46:40.775Z"
+  },
+  {
+    "_id": "asgj0oxmrnnfyy6",
+    "name": "Prince Kumar",
+    "email": "princeraj37004@gmail.com",
+    "password": "$2a$10$eAY1MHBk5ppEXiH8pEt4V.iwJzqnZ7eUEOH5rDrNBQpQNmvGVZfGK",
+    "role": "worker",
+    "village": "Rampur",
+    "createdAt": "2026-07-16T15:13:51.534Z",
+    "updatedAt": "2026-07-16T15:13:51.534Z"
+  },
+  {
+    "_id": "nczzm83mrqip693",
+    "name": "ravi kumar",
+    "email": "ravi123@gmail.com",
+    "password": "$2a$10$rRIIFP3bqQ.d8yA/VqTyGOwwcwX5CWuQaPFjMNucD4IFWEmcGiP3e",
+    "role": "worker",
+    "village": "Rampur",
+    "createdAt": "2026-07-18T15:24:21.351Z",
+    "updatedAt": "2026-07-18T15:24:21.351Z"
+  },
+  {
+    "_id": "ps0ktb2mrsucosx",
+    "name": "Prince Kumar",
+    "email": "prince123@gmail.com",
+    "password": "$2a$10$2vcXkH6U1zouEhZwFuineeRyQ9S.bGCxcdluz3VA2qPZQJ9y6IwZW",
+    "role": "worker",
+    "village": "Rampur",
+    "createdAt": "2026-07-20T06:26:06.609Z",
+    "updatedAt": "2026-07-20T06:26:06.609Z"
+  },
+  {
+    "_id": "iwvowd5mrvo4jcs",
+    "name": "Prince Kumar",
+    "email": "prince123@gmail.comm",
+    "password": "$2a$10$2dnzhjaIn9VCvxZ64vdSluD0p9pDk6PHfUJCWxBKiVL9Qyf/0IaJy",
+    "role": "worker",
+    "village": "Rampur",
+    "createdAt": "2026-07-22T05:55:07.132Z",
+    "updatedAt": "2026-07-22T05:55:07.132Z"
+  }
+]

@@ -1,0 +1,140 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.patient-modal {
+  width: 650px;
+  max-width: 95%;
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 18px;
+  padding: 28px;
+  color: #fff;
+  animation: popup .25s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,.45);
+}
+
+@keyframes popup{
+  from{
+    transform:scale(.9);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.modal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.modal-header h2{
+  margin:0;
+  font-size:24px;
+}
+
+.close-btn{
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  background:#1f2937;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.close-btn:hover{
+  background:#ef4444;
+}
+
+.patient-avatar{
+  width:90px;
+  height:90px;
+  margin:auto;
+  border-radius:50%;
+  background:#2563eb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.patient-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.patient-grid label{
+  display:block;
+  color:#9ca3af;
+  margin-bottom:8px;
+  font-size:13px;
+}
+
+.patient-grid p{
+  margin:0;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:16px;
+}
+
+.modal-footer{
+  margin-top:30px;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.modal-footer button{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:12px 30px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.modal-footer button:hover{
+  background:#1d4ed8;
+}
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:7px 14px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.status.active{
+  background:#1e3a8a;
+  color:#93c5fd;
+}
+
+.status.recovered{
+  background:#14532d;
+  color:#86efac;
+}
+
+.status.critical{
+  background:#7f1d1d;
+  color:#fca5a5;
+}
