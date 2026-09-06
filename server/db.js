@@ -1,6 +1,5 @@
 const jsonDb = require('./utils/jsonDb');
 
-// Define our collections
 const User = jsonDb.model('User');
 const Activity = jsonDb.model('Activity');
 const CaseAlert = jsonDb.model('CaseAlert');

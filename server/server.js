@@ -14,7 +14,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static assets if in production
-// (Vite build output can be hosted here if we build the app, which is a great touch)
 app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 // API Routes
@@ -27,14 +26,19 @@ app.use('/api/patients', require('./routes/patients'));
 
 // Health Check Endpoint
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', time: new Date().toISOString() });
+  res.json({
+    status: 'ok',
+    time: new Date().toISOString()
+  });
 });
 
-// Fallback to React index.html for SPA routing in production
+// Fallback route
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'), (err) => {
     if (err) {
-      res.status(200).send('Rural Health Worker Activity Tracker Backend is Running. Access the frontend via Vite dev server.');
+      res.status(200).send(
+        'Rural Health Worker Activity Tracker Backend is Running. Access the frontend via Vite dev server.'
+      );
     }
   });
 });
@@ -44,9 +48,9 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, async () => {
   console.log(`Server running on port ${PORT}`);
-  
-  // Seed the mock database
+
   console.log('Initializing database seeding...');
   await seedDatabase();
+
   console.log('Backend server fully ready!');
 });
