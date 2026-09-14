@@ -1,7 +1,7 @@
 
 // API Request Layer with Transparent LocalStorage Fallback
 
-const BASE_URL = '/api';
+const BASE_URL = 'https://sanjeevani-project.onrender.com/api';
 let isDemoMode = false;
 // Seed Mock Data in LocalStorage for Demo Mode if not already initialized
 function initLocalStorageMock() {
