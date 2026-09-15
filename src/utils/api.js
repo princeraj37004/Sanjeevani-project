@@ -64,8 +64,8 @@ function initLocalStorageMock() {
         patientAge: type === 'training' ? 0 : p.age,
         patientGender: type === 'training' ? 'N/A' : p.gender,
         village: w.village,
-        details: type === 'training' 
-          ? `Hygiene and sanitization drive conducted in village square.` 
+        details: type === 'training'
+          ? `Hygiene and sanitization drive conducted in village square.`
           : `${type.toUpperCase()} conducted for ${p.name} at their residence.`,
         outcome: outcomes[type][i % outcomes[type].length],
         isUrgent: isUrgent,
@@ -156,14 +156,11 @@ export async function apiRequest(endpoint, options = {}) {
           ...options.headers
         }
       });
-      
+
       if (!res.ok) {
         if (res.status === 401) {
-          console.warn(`API returned 401 for ${endpoint}. Falling back to demo mode.`);
-          isDemoMode = true;
-          initLocalStorageMock();
-          return handleMockRequest(endpoint, options);
-
+          const errorData = await res.json().catch(() => ({}));
+          throw new Error(errorData.message || 'Unauthorized');
         }
 
         // Patients endpoint
@@ -189,9 +186,9 @@ export async function apiRequest(endpoint, options = {}) {
       }
       throw err;
     }
-  } else 
+  } else
     return handleMockRequest(endpoint, options);
-  
+
 }
 if (!localStorage.getItem("sh_patients")) {
   localStorage.setItem(
@@ -249,8 +246,8 @@ if (!localStorage.getItem("sh_patients")) {
 export function getDemoModeStatus() {
   return isDemoMode;
 }
- const getCollection = (key) => JSON.parse(localStorage.getItem(key) || '[]');
-  const setCollection = (key, data) => localStorage.setItem(key, JSON.stringify(data));
+const getCollection = (key) => JSON.parse(localStorage.getItem(key) || '[]');
+const setCollection = (key, data) => localStorage.setItem(key, JSON.stringify(data));
 
 // MOCK LOCAL STORAGE HANDLERS
 function handleMockRequest(endpoint, options) {
@@ -258,10 +255,10 @@ function handleMockRequest(endpoint, options) {
   const body = options.body ? JSON.parse(options.body) : null;
   const token = localStorage.getItem('sh_token');
   // Patients
-if (endpoint === '/patients' && method === 'GET') {
-  return getCollection('sh_patients');
-}
-  
+  if (endpoint === '/patients' && method === 'GET') {
+    return getCollection('sh_patients');
+  }
+
   // Auth mock middlewaref
   let currentUser = null;
   if (token) {
@@ -273,7 +270,7 @@ if (endpoint === '/patients' && method === 'GET') {
   }
 
   // Helper to retrieve collections
- 
+
 
   // --- ROUTING ---
 
@@ -286,10 +283,10 @@ if (endpoint === '/patients' && method === 'GET') {
     }
     const fakeToken = `mock_token_${user._id}_${Date.now()}`;
     localStorage.setItem('sh_token', fakeToken);
-    
+
     const userProfile = { id: user._id, name: user.name, email: user.email, role: user.role, village: user.village };
     localStorage.setItem('sh_current_user', JSON.stringify(userProfile));
-    
+
     return { token: fakeToken, user: userProfile };
   }
 
@@ -321,10 +318,10 @@ if (endpoint === '/patients' && method === 'GET') {
 
     const fakeToken = `mock_token_${newUser._id}_${Date.now()}`;
     localStorage.setItem('sh_token', fakeToken);
-    
+
     const userProfile = { id: newUser._id, name: newUser.name, email: newUser.email, role: newUser.role, village: newUser.village };
     localStorage.setItem('sh_current_user', JSON.stringify(userProfile));
-    
+
     return { token: fakeToken, user: userProfile };
   }
 
@@ -336,7 +333,7 @@ if (endpoint === '/patients' && method === 'GET') {
     if (users.some(u => u.email === body.email)) {
       throw new Error('An account with this email is already registered');
     }
-    
+
     const userRole = body.role || 'worker';
     const tempPassword = 'SHW_' + Math.random().toString(36).substring(2, 8).toUpperCase() + '@2026';
     const newUser = {
@@ -382,7 +379,7 @@ if (endpoint === '/patients' && method === 'GET') {
   if (endpoint.startsWith('/activities') && method === 'GET') {
     if (!currentUser) throw new Error('Unauthenticated');
     const activities = getCollection('sh_activities');
-    
+
     // Check if single ID retrieval
     const parts = endpoint.split('/');
     if (parts.length === 3 && parts[2]) {
@@ -536,84 +533,84 @@ if (endpoint === '/patients' && method === 'GET') {
     alerts[idx].status = 'resolved';
     alerts[idx].resolvedBy = currentUser.name;
     alerts[idx].resolutionNotes = body.resolutionNotes;
-    
+
     setCollection('sh_alerts', alerts);
     return alerts[idx];
   }
   // Patients endpoints
-if (endpoint === "/patients" && method === "GET") {
-  if (!localStorage.getItem("sh_patients")) {
-    localStorage.setItem(
-      "sh_patients",
-      JSON.stringify([
-        {
-          _id: "1",
-          name: "Ramesh Kumar",
-          age: 45,
-          gender: "Male",
-          village: "Rampur",
-          disease: "Diabetes",
-          status: "Active"
-        },
-        {
-          _id: "2",
-          name: "Sita Devi",
-          age: 32,
-          gender: "Female",
-          village: "Rampur",
-          disease: "Pregnancy Checkup",
-          status: "Recovered"
-        },
-        {
-          _id: "3",
-          name: "Rahul Singh",
-          age: 10,
-          gender: "Male",
-          village: "Gopalpur",
-          disease: "Fever",
-          status: "Recovered"
-        },
-        {
-          _id: "4",
-          name: "Anita Kumari",
-          age: 60,
-          gender: "Female",
-          village: "Karanpur",
-          disease: "Hypertension",
-          status: "Critical"
-        },
-        {
-          _id: "5",
-          name: "Mohan Yadav",
-          age: 52,
-          gender: "Male",
-          village: "Bihta",
-          disease: "Heart Disease",
-          status: "Critical"
-        }
-      ])
-    );
+  if (endpoint === "/patients" && method === "GET") {
+    if (!localStorage.getItem("sh_patients")) {
+      localStorage.setItem(
+        "sh_patients",
+        JSON.stringify([
+          {
+            _id: "1",
+            name: "Ramesh Kumar",
+            age: 45,
+            gender: "Male",
+            village: "Rampur",
+            disease: "Diabetes",
+            status: "Active"
+          },
+          {
+            _id: "2",
+            name: "Sita Devi",
+            age: 32,
+            gender: "Female",
+            village: "Rampur",
+            disease: "Pregnancy Checkup",
+            status: "Recovered"
+          },
+          {
+            _id: "3",
+            name: "Rahul Singh",
+            age: 10,
+            gender: "Male",
+            village: "Gopalpur",
+            disease: "Fever",
+            status: "Recovered"
+          },
+          {
+            _id: "4",
+            name: "Anita Kumari",
+            age: 60,
+            gender: "Female",
+            village: "Karanpur",
+            disease: "Hypertension",
+            status: "Critical"
+          },
+          {
+            _id: "5",
+            name: "Mohan Yadav",
+            age: 52,
+            gender: "Male",
+            village: "Bihta",
+            disease: "Heart Disease",
+            status: "Critical"
+          }
+        ])
+      );
+    }
+
+    return JSON.parse(localStorage.getItem("sh_patients"));
   }
 
-  return JSON.parse(localStorage.getItem("sh_patients"));
-}
+  // Add Patient
+  if (endpoint === "/patients" && method === "POST") {
+    const patients = getCollection("sh_patients");
 
-// Add Patient
-if (endpoint === "/patients" && method === "POST") {
-  const patients = getCollection("sh_patients");
+    const newPatient = {
+      _id: Date.now().toString(),
+      ...body,
+      status: body.status || "Active",
+    };
 
-  const newPatient = {
-    _id: Date.now().toString(),
-    ...body,
-    status: body.status || "Active",
-  };
+    patients.push(newPatient);
 
-  patients.push(newPatient);
+    setCollection("sh_patients", patients);
 
-  setCollection("sh_patients", patients);
-
-  return newPatient;
-}
+    return newPatient;
+  }
   // Communities endpoints
   if (endpoint === '/communities' && method === 'GET') {
     return getCollection('sh_communities');
@@ -644,7 +641,7 @@ if (endpoint === "/patients" && method === "POST") {
     return comms.map(c => {
       const vActs = activities.filter(a => a.village.toLowerCase() === c.name.toLowerCase());
       const vAlerts = alerts.filter(a => a.village.toLowerCase() === c.name.toLowerCase() && a.status === 'pending');
-      
+
       return {
         _id: c._id,
         name: c.name,
@@ -666,7 +663,7 @@ if (endpoint === "/patients" && method === "POST") {
   if (endpoint === '/reports/overview' && method === 'GET') {
     if (!currentUser || currentUser.role !== 'supervisor') throw new Error('Unauthorized');
     const activities = getCollection('sh_activities');
-    
+
     const typeDistribution = { visit: 0, intervention: 0, training: 0 };
     const villageDistribution = {};
     const dailyOutreach = {};
@@ -704,7 +701,7 @@ if (endpoint === "/patients" && method === "POST") {
 
     // Filter collection
     let filtered = activities;
-    
+
     // Workers can only export their own activities
     if (currentUser.role === 'worker') {
       filtered = filtered.filter(a => a.workerId === currentUser.id);
@@ -729,7 +726,7 @@ if (endpoint === "/patients" && method === "POST") {
 
     // Headers matching criteria (date, community, type, notes)
     const headers = ['Date', 'Community', 'Type', 'Health Worker', 'Patient Name', 'Patient Age', 'Patient Gender', 'Notes', 'Outcome', 'Urgent Case?', 'Logged At'];
-    
+
     const rows = filtered.map(a => [
       a.date,
       a.village, // Community
@@ -767,7 +764,7 @@ if (endpoint === "/patients" && method === "POST") {
 
     // Filter collection
     let filtered = activities;
-    
+
     // Workers can only export their own activities
     if (currentUser.role === 'worker') {
       filtered = filtered.filter(a => a.workerId === currentUser.id);
