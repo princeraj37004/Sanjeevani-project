@@ -111,7 +111,7 @@ function initLocalStorageMock() {
 export async function checkBackendStatus() {
   try {
     const res = await fetch(`${BASE_URL}/health`, {
-      signal: AbortSignal.timeout(1500)
+      signal: AbortSignal.timeout(10000)
     });
 
     if (res.ok) {
