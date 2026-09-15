@@ -1,3 +1,4 @@
+import logo from '../assets/logo.svg';
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -48,7 +49,7 @@ export default function Sidebar({ isCollapsed, onToggle }) {
       {/* Mobile Toggle Bar */}
       <div className="mobile-navbar">
         <div className="brand">
-          <img src="/assets/logo.svg" alt="Sanjeevani Logo" className="logo" />
+          <img src={logo} alt="Sanjeevani Logo" className="logo" />
           <span>Sanjeevani</span>
         </div>
         <button className="mobile-toggle" onClick={() => setIsMobileOpen(!isMobileOpen)} aria-label="Toggle navigation menu">
@@ -70,7 +71,7 @@ export default function Sidebar({ isCollapsed, onToggle }) {
 
         <div className="sidebar-header">
           <div className="brand-logo" title="Sanjeevani Rural Health Tracker">
-            <img src="/assets/logo.svg" alt="Sanjeevani Logo" className="brand-img" />
+            <img src={logo} alt="Sanjeevani Logo" className="brand-img" />
             <div className="brand-text">
               <h2>Sanjeevani</h2>
               <span>Rural Health Tracker</span>
